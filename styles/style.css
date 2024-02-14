@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   block-size: 100%;
 }
@@ -41,6 +45,7 @@ ol {
 }
 
 .content {
+  inline-size: 1140px;
   display: grid;
   grid-template-columns: 711px 1fr;
   align-items: end;
@@ -147,16 +152,9 @@ ol {
 
 .search-form__checkbox-list .search-form__label:hover,
 .button:hover,
-.content__list-item:hover {
+.content__card-link:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-
-.search-form__textfield:focus,
-.search-form__label:focus,
-.button:focus,
-.content__card-link:focus {
-  outline: none;
 }
 
 .search-form__textfield:focus-visible,
@@ -196,21 +194,22 @@ ol {
 }
 
 .content__list {
+  display: flex;
+  flex-direction: column;
   position: relative;
   block-size: 298px;
   overflow: auto;
-}
-
-.content__list-item {
-  padding-block-end: 30px;
+  gap: 26px;
 }
 
 .content__card-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  padding: 2px 0 2px 2px;
+  padding: 2px;
+  padding-inline-end: 0;
   margin: 2px;
+  margin-inline-end: 6px;
 }
 
 .content__card-link_current {
